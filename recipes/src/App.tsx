@@ -49,17 +49,19 @@ class App extends Component<Props, State> {
 
 
   render = () => (
-    <div className="App">
-      <h1>Recipe Search App</h1>
-      <form onSubmit={this.search}> 
-        <input type="text" onInput={this.onInput} />
-        <button type="submit">Search</button>
-        <div>
-        {this.state.recipesFound.length !== 0 && this.state.recipesFound.map((recipe: RecipeType) => 
-          <RecipeCard key={recipe.title} recipe={recipe}  />
-        )}
+    <div className="container-fluid border text-white bg-dark">
+      <div className="row">
+        <div className="col-10 offset-1">
+          <h1>Recipe Search App</h1>
+          <form onSubmit={this.search}> 
+            <input className="form-control" type="text" onInput={this.onInput} />
+            <button className="btn btn-primary m-2" type="submit">Search</button>
+          </form>
         </div>
-      </form>
+            {this.state.recipesFound.length !== 0 && this.state.recipesFound.map((recipe: RecipeType) => 
+              <RecipeCard key={recipe.title} recipe={recipe}  />
+            )}
+      </div>
     </div>
   )
 }

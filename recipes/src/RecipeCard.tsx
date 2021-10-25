@@ -16,10 +16,13 @@ interface Props {
 
 class RecipeCard extends Component<Props, State> {
   render = () => (
-    <div>
-      <h1>Recipe</h1>
-      <h1>{this.props.recipe.title}</h1>
-      <img src={this.props.recipe.image} alt="recipe"/>
+    <div className="col-4 border m-0 p-2 text-dark">
+      <div className="card" style={{height: '400px'}}>
+        <img className="card-img-top" src={this.props.recipe.image} alt="recipe"/>
+        <div className="card-body">
+          <h4 className="card-title">{this.props.recipe.title}</h4>
+        </div>
+      </div>
     </div>
   )
 }
