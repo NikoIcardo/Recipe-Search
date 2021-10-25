@@ -20,7 +20,8 @@ app.get('/api/', async (req, res) => {
     method: 'get',
     url: 'https://api.spoonacular.com/recipes/complexSearch',
     params: {
-      q: `${search}`,
+      query: `${search}`,
+      number: 100,
       apiKey: '66c6570115c141a29a7662650cd11fb9',
     },
   };
