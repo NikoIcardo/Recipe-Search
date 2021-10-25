@@ -1,10 +1,16 @@
 {
   "dependencies": {
     "axios": "^0.23.0",
+    "chalk": "^4.1.2",
+    "concurrently": "^6.3.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "nodemon": "^2.0.14"
+    "http": "^0.0.1-security",
+    "nodemon": "^2.0.14",
+    "url": "^0.11.0"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "dev": "concurrently \"nodemon server.js\"  \"npm start --prefix recipes\""
   }
 }
